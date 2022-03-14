@@ -1,0 +1,151 @@
+/*Nunito*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,900;1,300&display=swap');
+
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+/*Ubuntu*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+/*Lora*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+
+/*Merriweather*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+
+
+:root {
+  --max-width: 1200px;
+  --text-menu: 'Lora', serif;
+  --text-h2: 'Merriweather Sans', sans-serif;
+  --text-name: 'Ubuntu', sans-serif;
+  --text-card: 'Nunito', sans-serif;
+  --text-header: 'Ubuntu', sans-serif;
+  --text-primary: 'Nunito', sans-serif;
+  --text-button: 'Roboto', sans-serif;
+  --text-title-page: 'Nunito', sans-serif;
+  --font-size-html: 62.5%;
+  --font-size-body: 1.6rem;
+  --font-size-header: clamp(2rem, 3vw + 0.1rem, 3rem);
+  --font-size-title-page: clamp(2rem, 2.5vw + 0.1rem, 3rem);
+  --color-title-page: #000000;
+  --color-header: #FFFFFF;
+  --color-card: rgb(0, 0, 0);
+  --color-card-hover: #FFFFFF;
+  --color-card-resultado: #000000;
+  --color-card-button: #FFFFFF;
+  --background-color-btn-banner: linear-gradient(225deg,#FFAF00 0%,#FE4D1B 48.15%,#E70154 100%);
+  --background-color-btn-projetos: linear-gradient(29.83deg,#1F95FD 0%,#4FE8E4 100%);
+  --background-color-projetos: linear-gradient(29.83deg,#e20913 0%,#790c00 100%);/*#8E0E00*/
+  --background-color-gray: #f9fbfc;
+  --background-color-card: #f9fbfc;
+  --box-shadow-card: 5px 5px 15px 1px #C0C5CE;
+  --box-shadow-card-hover: 0 0 10px #e20913;
+  --border-radius: 0.8rem;
+  --padding-sessao-header: 4rem 1rem 1rem 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+}
+
+html {
+  font-size: var(--font-size-html);
+}
+
+body {
+  background-color: pink;
+  font-size: var(--font-size-body);
+  font-family: var(--text-primary);
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template: "nav     header    payment"      146px
+                 "nav     main      payment"      1fr
+                / minmax(70px, 7%)      1fr       25%;    
+}
+
+nav {
+  background-color: purple;
+  grid-area: nav;
+}
+
+header {
+  background-color: red;
+  grid-area: header;
+}
+
+main {
+  background-color:#4FE8E4;
+  grid-area: main;
+}
+
+.section__confirmation {
+  background-color: pink;
+  display: none;
+  width: 25%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 25%;
+}
+
+.section__confirmation.active {
+  display: block;
+}
+
+.section__payment {
+  background-color:chartreuse;
+  grid-area: payment;
+}
+
+#btn-confirmation {
+  cursor: pointer;
+}
+
+#btn-payment {
+  display: none;
+}
+
+
+
+@media screen and (max-width:600px) {
+  body {
+    grid-template: "header"    146px
+                   "main"      1fr
+                   "nav"       70px
+                  / 1fr;    
+  }
+
+  .section__confirmation.active {
+    display: block;
+  }
+
+  .section__payment {
+    background-color:chartreuse;
+    display: none;
+    width: 70%;
+    height: calc(100vh - 70px);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .section__payment.active {
+    display: block;
+  }
+
+  #btn-confirmation {
+    display: none;
+  }
+
+  #btn-payment {
+    display: inline;
+    cursor: pointer;
+  }
+}

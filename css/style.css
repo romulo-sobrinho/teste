@@ -44,6 +44,17 @@
   --box-shadow-card-hover: 0 0 10px #e20913;
   --border-radius: 0.8rem;
   --padding-sessao-header: 4rem 1rem 1rem 1rem;
+
+  --bg-dark1: #252836;
+  --bg-dark2: #1F1D2B;
+  --bg-orange: #EA7C69;
+  --bg-home-orange: #EB966A1A; /*Opacidade de 26% = 1A*/
+
+  --radius-nav-externo: 12px 0px 0px 12px;
+  --radius-nav-interno: 8px;
+  --radius-nav-home: 12px;
+  
+
 }
 
 * {
@@ -66,13 +77,66 @@ body {
   height: 100vh;
   display: grid;
   grid-template: "nav     header    payment"      146px
-                 "nav     main      payment"      1fr
-                / minmax(70px, 7%)      1fr       25%;    
+                 "nav     main      payment"      auto
+                / 104px     1fr       25%;    
 }
 
 nav {
-  background-color: purple;
+  background-color: var(--bg-dark2);
   grid-area: nav;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 2.2rem;
+}
+
+.nav__home {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-nav-home);
+  background-color: var(--bg-home-orange);
+  margin: 0 24px;
+  padding: 11.33px 11.33px 13px 11.33px;
+}
+
+.nav__externo {
+  width: 92px;
+  height: 80px;
+  border-radius: var(--radius-nav-externo);
+  background-color: var(--bg-dark2);
+  padding: 13px 24px 11px 12px;
+}
+
+.nav__externo-active {
+  background-color: var(--bg-dark1);
+}
+
+.nav__interno {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-nav-interno);
+  background-color: var(--bg-dark2);
+  padding: 18px 18.5px;
+}
+
+.nav__interno-active {
+  background-color: var(--bg-orange);
+}
+
+.nav__interno-logout {
+  width: 56px;
+  height: 56px;
+  margin: 58px 0 0 0;
+  padding: 18.02px 17.98px 18.02px 18.02px;
+}
+
+.icon {
+  width: 20px;
+}
+
+.icon-home {
+  width: 33.33px;
 }
 
 header {
@@ -120,6 +184,12 @@ main {
                    "main"      1fr
                    "nav"       70px
                   / 1fr;    
+  }
+
+  nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .section__confirmation.active {

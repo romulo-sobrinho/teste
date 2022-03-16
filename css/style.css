@@ -206,11 +206,11 @@ main {
   left: 50%;
 }
 
-#btn-confirmation {
+#btn-payment {
   cursor: pointer;
 }
 
-#btn-payment {
+#btn-confirmation {
   display: none;
 }
 
@@ -256,7 +256,6 @@ main {
     height: 30px;
   }
   
-  
   .icon {
     width: 12px;
   }
@@ -265,29 +264,24 @@ main {
     width: 16px;
   }
 
+  .section__confirmation {
+    display: none;
+  }
+
   .section__confirmation.active {
     display: block;
-  }
-
-  .section__payment {
-    background-color:chartreuse;
-    display: none;
     width: 70%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 50px);
     position: absolute;
     top: 0;
-    right: 0;
-  }
-
-  .section__payment.active {
-    display: block;
-  }
-
-  #btn-confirmation {
-    display: none;
+    left: 30%;
   }
 
   #btn-payment {
+    display: none;
+  }
+
+  #btn-confirmation {
     display: inline;
     cursor: pointer;
   }

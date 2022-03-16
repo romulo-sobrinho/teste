@@ -92,6 +92,7 @@ nav {
   justify-content: space-between;
   align-items: flex-end;
   padding: 24px 0;
+  gap: 1rem;
 }
 
 .nav__home {

@@ -89,6 +89,7 @@ nav {
   justify-content: flex-start;
   align-items: flex-end;
   gap: 2.2rem;
+  padding: 24px 0;
 }
 
 .nav__home {

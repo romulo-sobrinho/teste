@@ -71,7 +71,7 @@ html {
 }
 
 body {
-  background-color: pink;
+  background-color: black;
   font-size: var(--font-size-body);
   font-family: var(--text-primary);
   width: 100%;
@@ -178,23 +178,32 @@ main {
   grid-area: main;
 }
 
-.section__confirmation {
+.section__payment {
   background-color: pink;
   display: none;
   width: 25%;
   height: 100vh;
   position: absolute;
   top: 0;
-  right: 25%;
+  left: 75%;
+}
+
+.section__payment.active {
+  display: block;
+}
+
+.section__confirmation {
+  background-color:chartreuse;
+  grid-area: payment;
 }
 
 .section__confirmation.active {
   display: block;
-}
-
-.section__payment {
-  background-color:chartreuse;
-  grid-area: payment;
+  width: 25%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 50%;
 }
 
 #btn-confirmation {

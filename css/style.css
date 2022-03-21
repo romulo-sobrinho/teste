@@ -1,30 +1,11 @@
-/*Nunito*/
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,900;1,300&display=swap');
+/* Barlow */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,900;1,300;1,400;1,600;1,900&display=swap');
 
-/*Roboto*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
 
-/*Ubuntu*/
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
-
-/*Lora*/
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
-
-/*Merriweather*/
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
 
 
 
 :root {
-  --max-width: 1200px;
-  --text-menu: 'Lora', serif;
-  --text-h2: 'Merriweather Sans', sans-serif;
-  --text-name: 'Ubuntu', sans-serif;
-  --text-card: 'Nunito', sans-serif;
-  --text-header: 'Ubuntu', sans-serif;
-  --text-primary: 'Nunito', sans-serif;
-  --text-button: 'Roboto', sans-serif;
-  --text-title-page: 'Nunito', sans-serif;
   --font-size-html: 62.5%;
   --font-size-body: 1.6rem;
   --font-size-header: clamp(2rem, 3vw + 0.1rem, 3rem);
@@ -47,13 +28,19 @@
 
   --bg-dark1: #252836;
   --bg-dark2: #1F1D2B;
-  --bg-orange: #EA7C69;
   --bg-home-orange: #EB966A1A; /*Opacidade de 26% = 1A*/
+
+  --color-primary-orange: #EA7C69;
+
+  --font-size-menu: 14px;
 
   --radius-nav-externo: 12px 0px 0px 12px;
   --radius-nav-externo-mob: 0px 0px 12px 12px;
   --radius-nav-interno: 8px;
-  --radius-nav-home: 12px;
+  --radius-nav-sidebar: 12px;
+  --radius-search: 8px;
+
+  --text-primary: 'Barlow', sans-serif;
   
 
 }
@@ -71,6 +58,7 @@ html {
 }
 
 body {
+  font-family: var(--text-primary);
   background-color: black;
   font-size: var(--font-size-body);
   font-family: var(--text-primary);
@@ -79,7 +67,7 @@ body {
   display: grid;
   grid-template: "nav     header    payment"      146px
                  "nav     main      payment"      auto
-                / 104px     1fr       25%;    
+                / 104px     1fr       30%;    
 }
 
 
@@ -95,10 +83,10 @@ nav {
   gap: 1rem;
 }
 
-.nav__home {
+.nav__sidebar {
   width: 56px;
   height: 56px;
-  border-radius: var(--radius-nav-home);
+  border-radius: var(--radius-nav-sidebar);
   background-color: var(--bg-home-orange);
   margin: 0 24px;
   display: flex;
@@ -136,7 +124,7 @@ nav {
 }
 
 .nav__interno-active {
-  background-color: var(--bg-orange);
+  background-color: var(--color-primary-orange);
 }
 
 .icon {
@@ -154,7 +142,8 @@ nav {
 }
 
 .nav__externo:hover .nav__interno {
-  background-color: var(--bg-orange);
+  background-color: var(--color-primary-orange);
+  filter: drop-shadow(0px 8px 24px var(--color-primary-orange));
 }
 
 .nav__externo:hover .icon {
@@ -167,25 +156,105 @@ nav {
 
 /* Início do header */
 header {
-  background-color: red;
+  background-color: var(--bg-dark1);
   grid-area: header;
+  padding: 24px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__resto {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header__resto__name {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.header__resto__date {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.header__search {
+  width: 220px;
+  height: 48px;
+  background-color: #2D303E;
+  border: 1px solid #393C49;
+  border-radius: var(--radius-search);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__search__input {
+  background-color: #2D303E;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.header__menu {
+  width: 100%;
+  height: 33px;
+  border-bottom: 1px solid #393C49;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.header__ul {
+  height: 100%;
+  text-transform: capitalize;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.header__a {
+  color: white;
+  font-size: var(--font-size-menu);
+  font-weight: 600;
+}
+
+.header__a:hover {
+  color: var(--color-primary-orange);
+}
+
+.header__a-active {
+  color: var(--color-primary-orange);
 }
 
 /* Fim do header */
 
 main {
-  background-color:#4FE8E4;
+  background-color:var(--bg-dark1);
   grid-area: main;
 }
 
 .section__payment {
   background-color: pink;
   display: none;
-  width: 25%;
+  width: 30%;
   height: 100vh;
   position: absolute;
   top: 0;
-  left: 75%;
+  left: 70%;
 }
 
 .section__payment.active {
@@ -199,11 +268,11 @@ main {
 
 .section__confirmation.active {
   display: block;
-  width: 25%;
+  width: 30%;
   height: 100vh;
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 40%;
 }
 
 #btn-payment {

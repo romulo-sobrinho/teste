@@ -218,8 +218,9 @@ header {
 }
 
 .header__search {
-  width: 220px;
-  height: 48px;
+  /*width: 220px;
+  height: 48px;*/
+  padding: 14px;
   background-color: #2D303E;
   border: 1px solid #393C49;
   border-radius: var(--radius-search);
@@ -278,6 +279,41 @@ main {
   background-color:var(--bg-dark1);
   grid-area: main;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+}
+
+.container__title {
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title__dishes {
+  border: 1px solid blue;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.title__dine {
+  background-color: #1F1D2B;
+  border: 1px solid #393C49;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px;
+}
+
+.container__dishes {
+
 }
 
 
@@ -364,7 +400,7 @@ main {
     top: 0;
     width: 22.5px;
     border-radius: 12px 0 0 0;
-    box-shadow: -8px 0 0 0 var(--bg-dark1);
+    box-shadow: -6px 0 0 0 var(--bg-dark1);
   }
   
   .nav__externo-active::after {
@@ -377,7 +413,7 @@ main {
     top: 0;
     width: 22.5px;
     border-radius: 0 12px 0 0;
-    box-shadow: 8px 0 0 0 var(--bg-dark1);
+    box-shadow: 6px 0 0 0 var(--bg-dark1);
   }
 
   .nav__externo-logout {
@@ -416,8 +452,6 @@ header {
 }
 
 .header__search {
-  width: 180px;
-  height: 40px;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -443,6 +477,16 @@ header {
   font-size: 14px;
 }
 /* Fim do header */
+
+/* Início Main */
+.title__dishes {
+  font-size: 16px;
+}
+
+.title__dine {
+  font-size: 11px;
+}
+/* Fim Main */
 
   .section__confirmation {
     display: none;
@@ -522,8 +566,8 @@ header {
   }
 
   .header__search {
-    width: 140px;
-    height: 35px;
+    padding: 10px;
+    gap: 6px;
   }
 
   .header__search__input {
@@ -537,6 +581,17 @@ header {
   .header__a-active {
     font-size: 9px;
   }
+  
+  /* Início Main */
+.title__dishes {
+  font-size: 12px;
+}
+
+.title__dine {
+  padding: 10px;
+  font-size: 8px;
+}
+/* Fim Main */
 
   .section__confirmation {
     display: none;

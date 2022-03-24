@@ -80,7 +80,7 @@ nav {
   justify-content: space-between;
   align-items: flex-end;
   padding: 24px 0;
-  gap: 1rem;
+  gap: 10px;
 }
 
 .nav__sidebar {
@@ -103,14 +103,42 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  position: relative;
 }
 
 .nav__externo-active {
   background-color: var(--bg-dark1);
 }
 
+.nav__externo-active::before {
+  content: "";
+  position: absolute;
+
+  background-color: transparent;
+  height: 40px;
+  bottom: 80px;
+  width: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 12px 0 0 var(--bg-dark1);
+  right: 0;
+}
+
+.nav__externo-active::after {
+  content: "";
+  position: absolute;
+
+  background-color: transparent;
+  height: 40px;
+  bottom: -40px;
+  width: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: 0 -12px 0 0 var(--bg-dark1);
+  right: 0;
+}
+
 .nav__externo-logout {
-  margin-top: 36px; /*Foi colocado 36px, porque o space-between na tela cheia parece simular um gap de mais ou menos 22px e o figma pede uma margim de 58px*/
+  margin-top: 20px; /*Foi colocado 20px porque já tem um gap no nav de 10px e o figma pede uma margim de (58px - 11px = 47px), entretanto se colocar um margin-top para fazer igual o figma a tela não caberá nos 100vh*/
 }
 
 .nav__interno {
@@ -143,7 +171,7 @@ nav {
 
 .nav__externo:hover .nav__interno {
   background-color: var(--color-primary-orange);
-  filter: drop-shadow(0px 8px 24px var(--color-primary-orange));
+  filter: drop-shadow(0px 4px 8px var(--color-primary-orange));/*O correto seria 8px 24px, mas tive que colocar esse valor para não bugar o ::after do nav__externo)*/
 }
 
 .nav__externo:hover .icon {
@@ -211,7 +239,7 @@ header {
 
 .header__menu {
   width: 100%;
-  height: 45px;/* Tamanho original seria 33px, mas para evitar quebra na página coloquei 45px*/
+  height: 33px;/* Tamanho original seria 33px, mas para evitar quebra na página coloquei 45px*/
   border-bottom: 1px solid #393C49;
   display: flex;
   justify-content: flex-start;
@@ -243,13 +271,17 @@ header {
 .header__a-active {
   color: var(--color-primary-orange);
 }
-
 /* Fim do header */
 
+/* Main */
 main {
   background-color:var(--bg-dark1);
   grid-area: main;
+  padding: 24px;
 }
+
+
+/* Main */
 
 .section__payment {
   background-color: pink;
@@ -266,7 +298,8 @@ main {
 }
 
 .section__confirmation {
-  background-color:chartreuse;
+  color: white;
+  background-color:var(--bg-dark2);
   grid-area: payment;
 }
 
@@ -318,6 +351,33 @@ main {
     align-items: center;
     padding: 0;
     border-radius: var(--radius-nav-externo-mob);
+    position: relative;
+  }
+
+  .nav__externo-active::before {
+    content: "";
+    position: absolute;
+  
+    background-color: transparent;
+    height: 12px;
+    right: -22.5px;
+    top: 0;
+    width: 22.5px;
+    border-radius: 12px 0 0 0;
+    box-shadow: -8px 0 0 0 var(--bg-dark1);
+  }
+  
+  .nav__externo-active::after {
+    content: "";
+    position: absolute;
+  
+    background-color: transparent;
+    height: 12px;
+    left: -22.5px;
+    top: 0;
+    width: 22.5px;
+    border-radius: 0 12px 0 0;
+    box-shadow: 8px 0 0 0 var(--bg-dark1);
   }
 
   .nav__externo-logout {
@@ -348,23 +408,23 @@ header {
 }
 
 .header__resto__name {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .header__resto__date {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .header__search {
-  width: 140px;
-  height: 35px;
+  width: 180px;
+  height: 40px;
   justify-content: center;
   align-items: center;
   gap: 4px;
 }
 
 .header__search__input {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .header__menu {
@@ -376,11 +436,11 @@ header {
 }
 
 .header__a {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .header__a-active {
-  font-size: 10px;
+  font-size: 14px;
 }
 /* Fim do header */
 
@@ -447,6 +507,35 @@ header {
 
   .icon-sidebar {
     width: 10px;
+  }
+
+  .header__resto {
+    gap: 10px;
+  }
+  
+  .header__resto__name {
+    font-size: 16px;
+  }
+  
+  .header__resto__date {
+    font-size: 10px;
+  }
+
+  .header__search {
+    width: 140px;
+    height: 35px;
+  }
+
+  .header__search__input {
+    font-size: 9px;
+  }
+
+  .header__a {
+    font-size: 9px;
+  }
+  
+  .header__a-active {
+    font-size: 9px;
   }
 
   .section__confirmation {

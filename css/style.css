@@ -169,6 +169,32 @@ nav {
   background-color: var(--bg-dark1);
 }
 
+.nav__externo:hover::before {
+  content: "";
+  position: absolute;
+
+  background-color: transparent;
+  height: 40px;
+  bottom: 80px;
+  width: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 12px 0 0 var(--bg-dark1);
+  right: 0;
+}
+
+.nav__externo:hover::after {
+  content: "";
+  position: absolute;
+
+  background-color: transparent;
+  height: 40px;
+  bottom: -40px;
+  width: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: 0 -12px 0 0 var(--bg-dark1);
+  right: 0;
+}
+
 .nav__externo:hover .nav__interno {
   background-color: var(--color-primary-orange);
   filter: drop-shadow(0px 4px 8px var(--color-primary-orange));/*O correto seria 8px 24px, mas tive que colocar esse valor para não bugar o ::after do nav__externo)*/
@@ -416,6 +442,32 @@ main {
     box-shadow: 6px 0 0 0 var(--bg-dark1);
   }
 
+  .nav__externo:hover::before {
+    content: "";
+    position: absolute;
+  
+    background-color: transparent;
+    height: 12px;
+    right: -22.5px;
+    top: 0;
+    width: 22.5px;
+    border-radius: 12px 0 0 0;
+    box-shadow: -6px 0 0 0 var(--bg-dark1);
+  }
+  
+  .nav__externo:hover::after {
+    content: "";
+    position: absolute;
+  
+    background-color: transparent;
+    height: 12px;
+    left: -22.5px;
+    top: 0;
+    width: 22.5px;
+    border-radius: 0 12px 0 0;
+    box-shadow: 6px 0 0 0 var(--bg-dark1);
+  }
+
   .nav__externo-logout {
     margin-top: 0;
   }
@@ -583,15 +635,15 @@ header {
   }
   
   /* Início Main */
-.title__dishes {
-  font-size: 12px;
-}
+  .title__dishes {
+    font-size: 12px;
+  }
 
-.title__dine {
-  padding: 10px;
-  font-size: 8px;
-}
-/* Fim Main */
+  .title__dine {
+    padding: 10px;
+    font-size: 8px;
+  }
+  /* Fim Main */
 
   .section__confirmation {
     display: none;

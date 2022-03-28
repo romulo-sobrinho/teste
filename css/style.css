@@ -1,5 +1,5 @@
 /* Barlow */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,900;1,300;1,400;1,600;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
 
 
 
@@ -309,7 +309,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 32px;
+  gap: 68px;
 }
 
 .container__title {
@@ -339,7 +339,80 @@ main {
 }
 
 .container__dishes {
+  border: 1px solid white;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 58px 40px;
+}
 
+.dishes__card {
+  background-color: var(--bg-dark2);
+  width: 192px;
+  height: 226px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding: 24px;
+}
+
+
+/* Utilizando background-imagem em vez de uma img no html 
+.dishes__img {
+  border: 1px solid #393C49;
+  width: 150px;
+  height: 135px;
+  border-radius: 50%;
+  background-image: url(../assets/img/dishes/dish1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -36px;
+}
+*/
+
+
+.dishes__img {
+  border: 1px solid #393C49;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  position: absolute;
+  top: -36px;
+}
+
+.dishes__img img {
+  height: 145px;
+}
+
+
+.dishes__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.dishes__content__title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.dishes__content__price, .dishes__content__bowls {
+  font-weight: 400;
 }
 
 

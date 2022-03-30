@@ -313,6 +313,7 @@ main {
 }
 
 .container__title {
+  border: 1px solid red;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -320,6 +321,7 @@ main {
 }
 
 .title__dishes {
+  border: 1px solid blue;
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -337,6 +339,7 @@ main {
 }
 
 .container__dishes {
+  border: 1px solid white;
   width: 100%;
   display: flex;
   justify-content: space-around;

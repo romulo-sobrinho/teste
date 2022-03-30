@@ -489,6 +489,25 @@ main {
   color: white;
 }
 
+.confirmation__item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmation__item__value {
+  display: flex;
+  gap: 43px;
+}
+
+.confirmation__item_p {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+
+}
+
 .confirmation__content {
   border: 1px solid blue;
   border-top: 1px solid #393C49;

@@ -77,7 +77,7 @@ nav {
   grid-area: nav;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-end;
   padding: 24px 0;
   gap: 10px;

@@ -432,10 +432,72 @@ main {
   display: block;
 }
 
+/* Início Section Confirmation */
 .section__confirmation {
   color: white;
   background-color:var(--bg-dark2);
   grid-area: payment;
+
+  grid-template: "c__header" auto
+                 "c__content" 1fr
+                 "c__total" auto
+                 / 1fr;
+  
+}
+
+.confirmation__header {
+  border: 1px solid red;
+  grid-area: c__header;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.confirmation__order__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.confirmation__selector {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.confirmation__selector__btn {
+  background-color: var(--bg-dark2);
+  border: 1px solid #393C49;
+  border-radius: 8px;
+  color: var(--color-primary-orange);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 12px;
+  text-transform: capitalize;
+}
+
+.confirmation__selector__btn:hover {
+  background-color: var(--color-primary-orange);
+  color: white;
+}
+
+.confirmation__selector__btn-active {
+  background-color: var(--color-primary-orange);
+  color: white;
+}
+
+.confirmation__content {
+  border: 1px solid blue;
+  border-top: 1px solid #393C49;
+  grid-area: c__content;
+}
+
+.confirmation__total {
+  border: 1px solid green;
+  grid-area: c__total;
 }
 
 .section__confirmation.active {
@@ -454,6 +516,7 @@ main {
 #btn-confirmation {
   display: none;
 }
+/* Fim Section Confirmation */
 
 
 

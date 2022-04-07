@@ -16,9 +16,10 @@
   --color-card-hover: #FFFFFF;
   --color-card-resultado: #000000;
   --color-card-button: #FFFFFF;
-  --background-color-btn-banner: linear-gradient(225deg,#FFAF00 0%,#FE4D1B 48.15%,#E70154 100%);
-  --background-color-btn-projetos: linear-gradient(29.83deg,#1F95FD 0%,#4FE8E4 100%);
-  --background-color-projetos: linear-gradient(29.83deg,#e20913 0%,#790c00 100%);/*#8E0E00*/
+  --background-color-btn-banner: linear-gradient(225deg, #FFAF00 0%, #FE4D1B 48.15%, #E70154 100%);
+  --background-color-btn-projetos: linear-gradient(29.83deg, #1F95FD 0%, #4FE8E4 100%);
+  --background-color-projetos: linear-gradient(29.83deg, #e20913 0%, #790c00 100%);
+  /*#8E0E00*/
   --background-color-gray: #f9fbfc;
   --background-color-card: #f9fbfc;
   --box-shadow-card: 5px 5px 15px 1px #C0C5CE;
@@ -28,7 +29,8 @@
 
   --bg-dark1: #252836;
   --bg-dark2: #1F1D2B;
-  --bg-home-orange: #EB966A1A; /*Opacidade de 26% = 1A*/
+  --bg-home-orange: #EB966A1A;
+  /*Opacidade de 26% = 1A*/
 
   --color-primary-orange: #EA7C69;
 
@@ -39,9 +41,10 @@
   --radius-nav-interno: 8px;
   --radius-nav-sidebar: 12px;
   --radius-search: 8px;
+  --radius-eight: 8px;
 
   --text-primary: 'Barlow', sans-serif;
-  
+
 
 }
 
@@ -65,9 +68,7 @@ body {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template: "nav     header    payment"      146px
-                 "nav     main      payment"      auto
-                / 104px     1fr       30%;    
+  grid-template: "nav     header    payment"146px "nav     main      payment"auto / 104px 1fr 30%;
 }
 
 
@@ -138,7 +139,8 @@ nav {
 }
 
 .nav__externo-logout {
-  margin-top: 20px; /*Foi colocado 20px porque já tem um gap no nav de 10px e o figma pede uma margim de (58px - 11px = 47px), entretanto se colocar um margin-top para fazer igual o figma a tela não caberá nos 100vh*/
+  margin-top: 20px;
+  /*Foi colocado 20px porque já tem um gap no nav de 10px e o figma pede uma margim de (58px - 11px = 47px), entretanto se colocar um margin-top para fazer igual o figma a tela não caberá nos 100vh*/
 }
 
 .nav__interno {
@@ -197,11 +199,13 @@ nav {
 
 .nav__externo:hover .nav__interno {
   background-color: var(--color-primary-orange);
-  filter: drop-shadow(0px 4px 8px var(--color-primary-orange));/*O correto seria 8px 24px, mas tive que colocar esse valor para não bugar o ::after do nav__externo)*/
+  filter: drop-shadow(0px 4px 8px var(--color-primary-orange));
+  /*O correto seria 8px 24px, mas tive que colocar esse valor para não bugar o ::after do nav__externo)*/
 }
 
 .nav__externo:hover .icon {
-  filter: sepia(1); /* Apenas foi colocado para simular uma cor quase branca, para não precisar gerar código de mudança no src da imagem pelo javascript */
+  filter: sepia(1);
+  /* Apenas foi colocado para simular uma cor quase branca, para não precisar gerar código de mudança no src da imagem pelo javascript */
 }
 
 /* Fim do NAVBAR */
@@ -266,7 +270,8 @@ header {
 
 .header__menu {
   width: 100%;
-  height: 33px;/* Tamanho original seria 33px, mas para evitar quebra na página coloquei 45px*/
+  height: 33px;
+  /* Tamanho original seria 33px, mas para evitar quebra na página coloquei 45px*/
   border-bottom: 1px solid #393C49;
   display: flex;
   justify-content: flex-start;
@@ -298,11 +303,12 @@ header {
 .header__a-active {
   color: var(--color-primary-orange);
 }
+
 /* Fim do header */
 
 /* Main */
 main {
-  background-color:var(--bg-dark1);
+  background-color: var(--bg-dark1);
   grid-area: main;
   padding: 24px;
   display: flex;
@@ -313,7 +319,6 @@ main {
 }
 
 .container__title {
-  border: 1px solid red;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -321,7 +326,6 @@ main {
 }
 
 .title__dishes {
-  border: 1px solid blue;
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -339,7 +343,6 @@ main {
 }
 
 .container__dishes {
-  border: 1px solid white;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -377,7 +380,7 @@ main {
 */
 
 
-.dishes__img {
+.dishes__container {
   border: 1px solid #393C49;
   width: 132px;
   height: 132px;
@@ -390,8 +393,8 @@ main {
   top: -36px;
 }
 
-.dishes__img img {
-  height: 145px;
+.dishes__container__img {
+  height: 100%;
 }
 
 
@@ -411,7 +414,8 @@ main {
   margin-bottom: 4px;
 }
 
-.dishes__content__price, .dishes__content__bowls {
+.dishes__content__price,
+.dishes__content__bowls {
   font-weight: 400;
 }
 
@@ -435,14 +439,11 @@ main {
 /* Início Section Confirmation */
 .section__confirmation {
   color: white;
-  background-color:var(--bg-dark2);
+  background-color: var(--bg-dark2);
   grid-area: payment;
 
-  grid-template: "c__header" auto
-                 "c__content" 1fr
-                 "c__total" auto
-                 / 1fr;
-  
+  grid-template: "c__header"auto "c__content"1fr "c__total"auto / 1fr;
+
 }
 
 .confirmation__header {
@@ -510,9 +511,127 @@ main {
 
 .confirmation__content {
   border: 1px solid blue;
+  padding: 28px 24px 0px 24px;
   border-top: 1px solid #393C49;
   grid-area: c__content;
 }
+
+.confirmation__content__items {
+  border: 3px solid rgb(154, 14, 170);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.confirmation__items__info {
+  border: 1px solid rgb(240, 222, 29);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmation__info__container__item {
+  border: 1px solid rgb(7, 119, 33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.confirmation__info__container__item__img {
+  height: 41px;
+  border-radius: 50%;
+}
+
+.confirmation__info__container__item__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.confirmation__info__container__item__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.confirmation__info__container__item__price {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ABBBC2;
+}
+
+.confirmation__info__container__qtyprice {
+  display: flex;
+  gap: 20px;
+}
+
+.confirmation__info__container__qty {
+  width: 48px;
+  height: 48px;
+  background-color: #2D303E;
+  border: 1px solid #393C49;
+  border-radius: var(--radius-eight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+.confirmation__info__container__price {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+
+.confirmation__items__order {
+  border: 1px solid rgb(16, 209, 223);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.confirmation__items__order__note {
+  width: 335px;
+  /*tamanho original 297px, aumentei para ficar melhor na tela lg*/
+  height: 48px;
+  padding: 14px;
+  background-color: #2D303E;
+  border: 1px solid #393C49;
+  border-radius: var(--radius-eight);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #E0E6E9;
+}
+
+.confirmation__items__order__btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-primary-orange);
+  border-radius: var(--radius-eight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .confirmation__total {
   border: 1px solid green;
@@ -535,16 +654,14 @@ main {
 #btn-confirmation {
   display: none;
 }
+
 /* Fim Section Confirmation */
 
 
 
 @media screen and (max-width:600px) {
   body {
-    grid-template: "header"    146px
-                   "main"      auto
-                   "nav"       50px
-                  / 1fr;    
+    grid-template: "header"146px "main"auto "nav"50px / 1fr;
   }
 
   nav {
@@ -574,7 +691,7 @@ main {
   .nav__externo-active::before {
     content: "";
     position: absolute;
-  
+
     background-color: transparent;
     height: 12px;
     right: -22.5px;
@@ -583,11 +700,11 @@ main {
     border-radius: 12px 0 0 0;
     box-shadow: -6px 0 0 0 var(--bg-dark1);
   }
-  
+
   .nav__externo-active::after {
     content: "";
     position: absolute;
-  
+
     background-color: transparent;
     height: 12px;
     left: -22.5px;
@@ -600,7 +717,7 @@ main {
   .nav__externo:hover::before {
     content: "";
     position: absolute;
-  
+
     background-color: transparent;
     height: 12px;
     right: -22.5px;
@@ -609,11 +726,11 @@ main {
     border-radius: 12px 0 0 0;
     box-shadow: -6px 0 0 0 var(--bg-dark1);
   }
-  
+
   .nav__externo:hover::after {
     content: "";
     position: absolute;
-  
+
     background-color: transparent;
     height: 12px;
     left: -22.5px;
@@ -631,7 +748,7 @@ main {
     width: 30px;
     height: 30px;
   }
-  
+
   .icon {
     width: 12px;
   }
@@ -641,59 +758,61 @@ main {
   }
 
   /* Início do header */
-header {
-  padding: 24px 24px 0 24px;
-}
+  header {
+    padding: 24px 24px 0 24px;
+  }
 
 
-.header__resto {
-  gap: 10px;
-}
+  .header__resto {
+    gap: 10px;
+  }
 
-.header__resto__name {
-  font-size: 22px;
-}
+  .header__resto__name {
+    font-size: 22px;
+  }
 
-.header__resto__date {
-  font-size: 14px;
-}
+  .header__resto__date {
+    font-size: 14px;
+  }
 
-.header__search {
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-}
+  .header__search {
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
 
-.header__search__input {
-  font-size: 12px;
-}
+  .header__search__input {
+    font-size: 12px;
+  }
 
-.header__menu {
-  height: 33px;
-}
+  .header__menu {
+    height: 33px;
+  }
 
-.header__ul {
-  gap: 20px;
-}
+  .header__ul {
+    gap: 20px;
+  }
 
-.header__a {
-  font-size: 14px;
-}
+  .header__a {
+    font-size: 14px;
+  }
 
-.header__a-active {
-  font-size: 14px;
-}
-/* Fim do header */
+  .header__a-active {
+    font-size: 14px;
+  }
 
-/* Início Main */
-.title__dishes {
-  font-size: 16px;
-}
+  /* Fim do header */
 
-.title__dine {
-  font-size: 11px;
-}
-/* Fim Main */
+  /* Início Main */
+  .title__dishes {
+    font-size: 16px;
+  }
+
+  .title__dine {
+    font-size: 11px;
+  }
+
+  /* Fim Main */
 
   .section__confirmation {
     display: none;
@@ -721,10 +840,7 @@ header {
 
 @media screen and (max-width:400px) {
   body {
-    grid-template: "header"    146px
-                   "main"      auto
-                   "nav"       40px
-                  / 1fr;    
+    grid-template: "header"146px "main"auto "nav"40px / 1fr;
   }
 
   nav {
@@ -751,7 +867,7 @@ header {
     width: 26px;
     height: 26px;
   }
-  
+
   .icon {
     width: 12px;
   }
@@ -763,11 +879,11 @@ header {
   .header__resto {
     gap: 10px;
   }
-  
+
   .header__resto__name {
     font-size: 16px;
   }
-  
+
   .header__resto__date {
     font-size: 10px;
   }
@@ -784,11 +900,11 @@ header {
   .header__a {
     font-size: 9px;
   }
-  
+
   .header__a-active {
     font-size: 9px;
   }
-  
+
   /* Início Main */
   .title__dishes {
     font-size: 12px;
@@ -798,6 +914,7 @@ header {
     padding: 10px;
     font-size: 8px;
   }
+
   /* Fim Main */
 
   .section__confirmation {

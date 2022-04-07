@@ -607,7 +607,7 @@ main {
 }
 
 .confirmation__items__order__note {
-  width: 335px;
+  width: 100%;
   /*tamanho original 297px, aumentei para ficar melhor na tela lg*/
   height: 48px;
   padding: 14px;
@@ -623,8 +623,8 @@ main {
 }
 
 .confirmation__items__order__btn {
-  width: 48px;
-  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   border: 1px solid var(--color-primary-orange);
   border-radius: var(--radius-eight);
   display: flex;
